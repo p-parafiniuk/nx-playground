@@ -1,0 +1,137 @@
+{
+  "name": "angular-showcase",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "application",
+  "prefix": "nx-playground",
+  "sourceRoot": "apps/angular-showcase/src",
+  "tags": [],
+  "targets": {
+    "build": {
+      "executor": "@angular-devkit/build-angular:browser",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/apps/angular-showcase/browser",
+        "index": "apps/angular-showcase/src/index.html",
+        "main": "apps/angular-showcase/src/main.ts",
+        "polyfills": ["zone.js"],
+        "tsConfig": "apps/angular-showcase/tsconfig.app.json",
+        "inlineStyleLanguage": "scss",
+        "assets": [
+          "apps/angular-showcase/src/favicon.ico",
+          "apps/angular-showcase/src/assets"
+        ],
+        "styles": ["apps/angular-showcase/src/styles.scss"],
+        "scripts": []
+      },
+      "configurations": {
+        "production": {
+          "budgets": [
+            {
+              "type": "initial",
+              "maximumWarning": "500kb",
+              "maximumError": "1mb"
+            },
+            {
+              "type": "anyComponentStyle",
+              "maximumWarning": "2kb",
+              "maximumError": "4kb"
+            }
+          ],
+          "outputHashing": "all"
+        },
+        "development": {
+          "buildOptimizer": false,
+          "optimization": false,
+          "vendorChunk": true,
+          "extractLicenses": false,
+          "sourceMap": true,
+          "namedChunks": true
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "serve": {
+      "executor": "@angular-devkit/build-angular:dev-server",
+      "configurations": {
+        "production": {
+          "buildTarget": "angular-showcase:build:production"
+        },
+        "development": {
+          "buildTarget": "angular-showcase:build:development"
+        }
+      },
+      "defaultConfiguration": "development"
+    },
+    "extract-i18n": {
+      "executor": "@angular-devkit/build-angular:extract-i18n",
+      "options": {
+        "buildTarget": "angular-showcase:build"
+      }
+    },
+    "lint": {
+      "executor": "@nx/eslint:lint",
+      "outputs": ["{options.outputFile}"]
+    },
+    "test": {
+      "executor": "@nx/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
+      "options": {
+        "jestConfig": "apps/angular-showcase/jest.config.ts"
+      }
+    },
+    "server": {
+      "dependsOn": ["build"],
+      "executor": "@angular-devkit/build-angular:server",
+      "options": {
+        "outputPath": "dist/apps/angular-showcase/server",
+        "main": "apps/angular-showcase/server.ts",
+        "tsConfig": "apps/angular-showcase/tsconfig.server.json",
+        "inlineStyleLanguage": "scss"
+      },
+      "configurations": {
+        "production": {
+          "outputHashing": "media"
+        },
+        "development": {
+          "buildOptimizer": false,
+          "optimization": false,
+          "sourceMap": true,
+          "extractLicenses": false,
+          "vendorChunk": true
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "serve-ssr": {
+      "executor": "@angular-devkit/build-angular:ssr-dev-server",
+      "configurations": {
+        "development": {
+          "browserTarget": "angular-showcase:build:development",
+          "serverTarget": "angular-showcase:server:development"
+        },
+        "production": {
+          "browserTarget": "angular-showcase:build:production",
+          "serverTarget": "angular-showcase:server:production"
+        }
+      },
+      "defaultConfiguration": "development"
+    },
+    "prerender": {
+      "executor": "@angular-devkit/build-angular:prerender",
+      "options": {
+        "routes": ["/"]
+      },
+      "configurations": {
+        "development": {
+          "browserTarget": "angular-showcase:build:development",
+          "serverTarget": "angular-showcase:server:development"
+        },
+        "production": {
+          "browserTarget": "angular-showcase:build:production",
+          "serverTarget": "angular-showcase:server:production"
+        }
+      },
+      "defaultConfiguration": "production"
+    }
+  }
+}
