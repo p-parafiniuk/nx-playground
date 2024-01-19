@@ -9,11 +9,13 @@ import { provideStore } from '@ngrx/store';
 import { provideEffects } from '@ngrx/effects';
 import { counterReducer } from './components/Pages/MainPage/main-page.component';
 
+export const storeWithReducers = { count: counterReducer };
+
 export const appConfig: ApplicationConfig = {
   providers: [
     importProvidersFrom(HttpClientModule),
     provideEffects(),
-    provideStore({ count: counterReducer }),
+    provideStore(storeWithReducers),
     provideClientHydration(),
     provideRouter(appRoutes),
   ],
