@@ -3,7 +3,7 @@ import { RouterModule } from '@angular/router';
 import { NxWelcomeComponent } from './nx-welcome.component';
 import {
   MainPageComponent,
-} from '../Pages/MainPage/main-page.component';
+} from './components/Pages/MainPage/main-page.component';
 import { ButtonComponent } from '@nx-playground/ui';
 
 @Component({

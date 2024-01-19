@@ -4,7 +4,7 @@ import { appRoutes } from './app.routes';
 import { provideClientHydration } from '@angular/platform-browser';
 import { provideStore } from '@ngrx/store';
 import { provideEffects } from '@ngrx/effects';
-import { counterReducer } from '../Pages/MainPage/main-page.component';
+import { counterReducer } from './components/Pages/MainPage/main-page.component';
 
 export const appConfig: ApplicationConfig = {
   providers: [
