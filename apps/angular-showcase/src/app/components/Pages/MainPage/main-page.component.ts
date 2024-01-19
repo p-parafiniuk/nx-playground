@@ -16,7 +16,10 @@ export const counterReducer = createReducer(
   on(reset, (state) => 0)
 );
 
-// component part
+
+/**
+ * Component part
+ */
 import { Component, OnInit, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Store, createAction } from '@ngrx/store';

@@ -1,0 +1,13 @@
+:host {
+  font-family: monospace;
+  font-family: 'PT Sans', sans-serif;
+
+
+  & .Card {
+    background-color: #{var(--nx-global-color-secondary)};
+    border: 1px solid #{var(--nx-global-color-primary)};
+    border-radius: 16px;
+    // padding-inline-start: 16px;
+    padding: 16px 16px 24px;
+  }
+}
