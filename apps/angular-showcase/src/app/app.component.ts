@@ -1,17 +1,18 @@
 import { Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { NxWelcomeComponent } from './nx-welcome.component';
-import {
-  MainPageComponent,
-} from './components/Pages/MainPage/main-page.component';
+
+// app lvl
+import { MainPageComponent } from './components/Pages/MainPage/main-page.component';
+import { InternalTestComponent } from './components/Pages/InternalTest/internal-test.component';
+
+// ui package lvl
 import { ButtonComponent } from '@nx-playground/ui';
 
 @Component({
   standalone: true,
-  // imports: [NxWelcomeComponent, RouterModule],
   imports: [
-    NxWelcomeComponent,
     MainPageComponent,
+    InternalTestComponent,
     ButtonComponent,
     RouterModule,
   ],
