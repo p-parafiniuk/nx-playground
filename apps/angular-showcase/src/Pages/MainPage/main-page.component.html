@@ -1,9 +1,18 @@
-<p>main-page works!</p>
+<h1>Signal (test)</h1>
+<hr>
+<div>Current Signal Count: {{ signalCount() }}</div>
+
+<button (click)="signalIncrement()">Increment</button>
+
+<br><br>
+<br><br>
+
+
+<h1>NGRX Test</h1>
+<hr>
+
 <button (click)="increment()">Increment</button>
 
 <div>Current Count: {{ count$ | async }}</div>
-
-sd
 <button (click)="decrement()">Decrement</button>
-
 <button (click)="reset()">Reset Counter</button>

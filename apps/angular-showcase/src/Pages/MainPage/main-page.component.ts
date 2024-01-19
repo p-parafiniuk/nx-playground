@@ -16,9 +16,8 @@ export const counterReducer = createReducer(
   on(reset, (state) => 0)
 );
 
-
 // component part
-import { Component } from '@angular/core';
+import { Component, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Store, createAction } from '@ngrx/store';
 import { Observable } from 'rxjs';
@@ -31,9 +30,8 @@ import { Observable } from 'rxjs';
   styleUrl: './main-page.component.scss',
 })
 export class MainPageComponent {
-
-  count$: Observable<number>
-  
+  count$: Observable<number>;
+  signalCount = signal(0);
 
   constructor(private store: Store<{ count: number }>) {
     this.count$ = store.select('count');
@@ -44,6 +42,10 @@ export class MainPageComponent {
   //     console.log('counter', counter);
   //   })
   // }
+
+  signalIncrement() {
+    this.signalCount.set(this.signalCount() + 1);
+  }
 
   increment() {
     this.store.dispatch(increment());
@@ -56,6 +58,4 @@ export class MainPageComponent {
   reset() {
     this.store.dispatch(reset());
   }
-
-
 }
