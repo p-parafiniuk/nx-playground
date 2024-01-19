@@ -17,10 +17,11 @@ export const counterReducer = createReducer(
 );
 
 // component part
-import { Component, signal } from '@angular/core';
+import { Component, OnInit, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Store, createAction } from '@ngrx/store';
 import { Observable } from 'rxjs';
+import { ProductService } from '../../../services/Product/product.service';
 
 @Component({
   selector: 'nx-playground-main-page',
@@ -29,19 +30,31 @@ import { Observable } from 'rxjs';
   templateUrl: './main-page.component.html',
   styleUrl: './main-page.component.scss',
 })
-export class MainPageComponent {
+export class MainPageComponent implements OnInit {
   count$: Observable<number>;
   signalCount = signal(0);
 
-  constructor(private store: Store<{ count: number }>) {
+  constructor(
+    private productService: ProductService,
+    private store: Store<{ count: number }>) {
     this.count$ = store.select('count');
   }
 
-  // ngOnInit() {
-  //   this.store.select('counter').subscribe((counter) => {
-  //     console.log('counter', counter);
-  //   })
-  // }
+  ngOnInit() {
+    this.fetchProducts();
+
+    // this.store.select('counter').subscribe((counter) => {
+    //   console.log('counter', counter);
+    // })
+  }
+
+  fetchProducts() {
+    this.productService.getProducts().subscribe((products) => {
+      console.log('products', products);
+    });
+  }
+
+
 
   signalIncrement() {
     this.signalCount.set(this.signalCount() + 1);
