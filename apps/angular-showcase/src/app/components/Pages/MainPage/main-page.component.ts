@@ -34,8 +34,10 @@ import { ProductService } from '../../../services/Product/product.service';
 })
 export class MainPageComponent implements OnInit {
   @Input() title: string; 
-  count$: Observable<number>;
-  signalCount = signal(0);
+
+  waterProducts = [{ name: 'water' }, { name: 'water2' }, { name: 'water3' }];
+  // count$: Observable<number>;
+  // signalCount = signal(0);
 
   constructor(
     private productService: ProductService,
@@ -43,7 +45,7 @@ export class MainPageComponent implements OnInit {
   ) {
     this.title = 'title';
 
-    this.count$ = store.select('count');
+    // this.count$ = store.select('count');
   }
 
   ngOnInit() {
@@ -60,9 +62,9 @@ export class MainPageComponent implements OnInit {
     });
   }
 
-  signalIncrement() {
-    this.signalCount.set(this.signalCount() + 1);
-  }
+  // signalIncrement() {
+  //   this.signalCount.set(this.signalCount() + 1);
+  // }
 
   increment() {
     this.store.dispatch(increment());

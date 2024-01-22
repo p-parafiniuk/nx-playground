@@ -1,7 +1,6 @@
 :host {
-//   font-family: monospace;
+  //   font-family: monospace;
   font-family: 'PT Sans', sans-serif;
-
 
   & .Card {
     background-color: #{var(--nx-global-color-secondary)};
@@ -11,11 +10,22 @@
     padding: 16px 16px 24px;
 
     &__Title {
-        font-size: 24px;
-        font-weight: 600;
-        color: #{var(--nx-global-color-primary)};
-        margin-bottom: 16px;
-      }
-    
-}
+      font-size: 24px;
+      font-weight: 600;
+      color: #{var(--nx-global-color-primary)};
+      margin-bottom: 16px;
+    }
+  }
+
+  & .mt {
+    &-1 {
+      margin-top: 4px;
+    }
+  }
+
+  & .mb {
+    &-1 {
+      margin-bottom: 4px;
+    }
+  }
 }
