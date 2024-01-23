@@ -1,0 +1,16 @@
+:host {
+  .MainNavigation {
+    display: flex;
+
+    justify-content: space-between;
+    // flex-direction: column;
+    padding-inline: 16px;
+    padding-block: 32px;
+
+    &__Links {
+      display: flex;
+      align-items: flex-end;
+      gap: 16px;
+    }
+  }
+}
