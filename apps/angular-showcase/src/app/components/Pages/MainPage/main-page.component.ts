@@ -1,19 +1,27 @@
 // actions
-export const increment = createAction('[Counter Component] Increment');
-export const decrement = createAction('[Counter Component] Decrement');
-export const reset = createAction('[Counter Component] Reset');
+export const addProduct = createAction('[Product] Add');
+export const editProduct = createAction('[Product] Edit');
+export const removeProduct = createAction('[Product] Remove');
 
 // reducer part
 import { createAction, createReducer, on } from '@ngrx/store';
 // import { increment, decrement, reset } from './counter.actions';
 
-export const initialState = 0;
+export const initialState = [];
 
 export const counterReducer = createReducer(
   initialState,
-  on(increment, decrement, (state) => state + 1),
-  // on(decrement, (state) => state - 1),
-  on(reset, (state) => 0)
+  on(addProduct, (state, action) => {
+    console.log('state', state);
+    console.log('actiokn', action);
+
+    return {
+      ...state,
+      products: [...state, action],
+    };
+  }),
+  // on(editProduct, (state, action) => state + 1),
+  // on(removeProduct, (state, action) => state + 1)
 );
 
 /**
@@ -33,7 +41,7 @@ import { ProductService } from '../../../services/Product/product.service';
   styleUrl: './main-page.component.scss',
 })
 export class MainPageComponent implements OnInit {
-  @Input() title: string; 
+  @Input() title: string;
 
   waterProducts = [{ name: 'water' }, { name: 'water2' }, { name: 'water3' }];
   // count$: Observable<number>;
@@ -66,15 +74,15 @@ export class MainPageComponent implements OnInit {
   //   this.signalCount.set(this.signalCount() + 1);
   // }
 
-  increment() {
-    this.store.dispatch(increment());
+  addProduct() {
+    this.store.dispatch(addProduct());
   }
 
-  decrement() {
-    this.store.dispatch(decrement());
+  editProduct() {
+    this.store.dispatch(editProduct());
   }
 
-  reset() {
-    this.store.dispatch(reset());
+  removeProduct() {
+    this.store.dispatch(editProduct());
   }
 }

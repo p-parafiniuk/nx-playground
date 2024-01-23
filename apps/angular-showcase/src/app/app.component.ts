@@ -7,10 +7,12 @@ import { InternalTestComponent } from './components/Pages/InternalTest/internal-
 
 // ui package lvl
 import { ButtonComponent } from '@nx-playground/ui';
+import { MainNavigationComponent } from './components/organisms/main-navigation/main-navigation.component';
 
 @Component({
   standalone: true,
   imports: [
+    MainNavigationComponent,
     MainPageComponent,
     InternalTestComponent,
     ButtonComponent,
