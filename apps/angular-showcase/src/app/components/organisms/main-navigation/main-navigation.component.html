@@ -1,9 +1,29 @@
 <nav class="MainNavigation">
-  <div class="MainNavigation__Logo">LOGO</div>
+  <div class="MainNavigation__Logo">
+    <a
+      routerLink="/"
+      routerLinkActive="active-page"
+      ariaCurrentWhenActive="page"
+    >
+      LOGO
+    </a>
+  </div>
 
   <div class="MainNavigation__Links">
-    <a [routerLink]="'/'">Main</a>
+    <a
+      routerLink="/"
+      routerLinkActive="active-page"
+      ariaCurrentWhenActive="page"
+    >
+      Home
+    </a>
     -->
-    <a [routerLink]="'internal-test'">Internal test</a>
+    <a
+      routerLink="internal-test"
+      routerLinkActive="active-page"
+      ariaCurrentWhenActive="page"
+    >
+      Internal test
+    </a>
   </div>
 </nav>
