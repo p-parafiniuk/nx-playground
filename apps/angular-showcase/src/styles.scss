@@ -1,9 +1,70 @@
 /* You can add global styles to this file, and also import other style files */
 
-:root {
-    --nx-global-color-primary: #7d37ff; 
-    // #6100ff
-    --nx-global-color-secondary: #f1ecfe;
-    --nx-global-color-text: #000000;
-  }
-  
+
+// old pallete 
+// :root {
+//   --nx-global-color-primary: #7d37ff;  // #6100ff
+//   --nx-global-color-secondary: #f1ecfe;
+//   --nx-global-color-text: #000000;
+// }
+
+
+:root {  
+    /* Primary */  
+    --nx-custom-purple-050: #EAE2F8;  
+    --nx-custom-purple-100: #CFBCF2;  
+    --nx-custom-purple-200: #A081D9;  
+    --nx-custom-purple-300: #8662C7;  
+    --nx-custom-purple-400: #724BB7;  
+    --nx-custom-purple-500: #653CAD;  
+    --nx-custom-purple-600: #51279B;  
+    --nx-custom-purple-700: #421987;  
+    --nx-custom-purple-800: #34126F;  
+    --nx-custom-purple-900: #240754;    
+    
+    --nx-custom-red-vivid-050: #FFE3E3;  
+    --nx-custom-red-vivid-100: #FFBDBD;  
+    --nx-custom-red-vivid-200: #FF9B9B;  
+    --nx-custom-red-vivid-300: #F86A6A;  
+    --nx-custom-red-vivid-400: #EF4E4E;  
+    --nx-custom-red-vivid-500: #E12D39;  
+    --nx-custom-red-vivid-600: #CF1124;  
+    --nx-custom-red-vivid-700: #AB091E;  
+    --nx-custom-red-vivid-800: #8A041A;  
+    --nx-custom-red-vivid-900: #610316;    
+    
+    /* Neutrals */  
+    --nx-custom-blue-grey-050: #F0F4F8;  
+    --nx-custom-blue-grey-100: #D9E2EC;  
+    --nx-custom-blue-grey-200: #BCCCDC;  
+    --nx-custom-blue-grey-300: #9FB3C8;  
+    --nx-custom-blue-grey-400: #829AB1;  
+    --nx-custom-blue-grey-500: #627D98;  
+    --nx-custom-blue-grey-600: #486581;  
+    --nx-custom-blue-grey-700: #334E68;  
+    --nx-custom-blue-grey-800: #243B53;  
+    --nx-custom-blue-grey-900: #102A43;    
+    
+    /* Supporting */  
+    --nx-custom-teal-vivid-050: #F0FCF9;  
+    --nx-custom-teal-vivid-100: #C6F7E9;  
+    --nx-custom-teal-vivid-200: #8EEDD1;  
+    --nx-custom-teal-vivid-300: #5FE3C0;  
+    --nx-custom-teal-vivid-400: #2DCCA7;  
+    --nx-custom-teal-vivid-500: #17B897;  
+    --nx-custom-teal-vivid-600: #079A82;  
+    --nx-custom-teal-vivid-700: #048271;  
+    --nx-custom-teal-vivid-800: #016457;  
+    --nx-custom-teal-vivid-900: #004440;    
+    
+    --nx-custom-yellow-vivid-050: #FFFBEA;  
+    --nx-custom-yellow-vivid-100: #FFF3C4;  
+    --nx-custom-yellow-vivid-200: #FCE588;  
+    --nx-custom-yellow-vivid-300: #FADB5F;  
+    --nx-custom-yellow-vivid-400: #F7C948;  
+    --nx-custom-yellow-vivid-500: #F0B429;  
+    --nx-custom-yellow-vivid-600: #DE911D;  
+    --nx-custom-yellow-vivid-700: #CB6E17;  
+    --nx-custom-yellow-vivid-800: #B44D12;  
+    --nx-custom-yellow-vivid-900: #8D2B0B;
+}

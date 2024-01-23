@@ -3,9 +3,9 @@
   font-family: 'PT Sans', sans-serif;
 
   & .Card {
-    background-color: #{var(--nx-global-color-secondary)};
-    border: 1px solid #{var(--nx-global-color-primary)};
-    border-radius: 16px;
+    background-color: #{var(--nx-custom-purple-050)};
+    border: 1px solid #{var(--nx-custom-purple-500)};
+    border-radius: 8px;
     // padding-inline-start: 16px;
     padding: 16px 16px 24px;
 
