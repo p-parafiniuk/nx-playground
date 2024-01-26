@@ -13,3 +13,30 @@ export const appRoutes: Route[] = [
   },
   { path: '**', pathMatch: 'full', component: Page404Component, title: '404' },
 ];
+
+/**
+ * Provides access to information about a route 
+ * associated with a component
+ * that is loaded in an outlet.
+ * 
+ * Use to traverse the `RouterState` tree and 
+ *   extract information from nodes.
+ */
+
+//Example
+/**
+export const appRoutes: Route[] = [
+  {
+    title: '',
+    path: 'test/:testId',
+    pathMatch: 'full | prefix', // default is 'prefix'
+    loadComponent: () => import('./test.component'),
+    children: [
+      (recurrently)
+    ],
+    data: {
+      permission: 'admin',
+    },
+  },
+];
+ */
