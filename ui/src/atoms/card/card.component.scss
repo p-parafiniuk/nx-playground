@@ -1,17 +1,16 @@
 :host {
-    & .Card {
-        background-color: #{var(--nx-custom-purple-050)};
-        border: 1px solid #{var(--nx-custom-purple-500)};
-        border-radius: 8px;
-        // padding-inline-start: 16px;
-        padding: 16px 16px 24px;
-    
-        &__Title {
-          font-size: 24px;
-          font-weight: 600;
-          color: #{var(--nx-global-color-primary)};
-          margin-bottom: 16px;
-        }
-      }
-    
+  & .Card {
+    background-color: #{var(--nx-custom-purple-050)};
+    border: 1px solid #{var(--nx-custom-purple-500)};
+    border-radius: 8px;
+    // padding-inline-start: 16px;
+    padding: 16px 16px 24px;
+
+    // &__Title {
+    //   font-size: 24px;
+    //   font-weight: 600;
+    //   color: #{var(--nx-global-color-primary)};
+    //   margin-bottom: 16px;
+    // }
+  }
 }

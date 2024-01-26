@@ -1,5 +1,4 @@
-import { Component } from '@angular/core';
-// import { CommonModule } from '@angular/common';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 
 @Component({
   selector: 'nx-playground-card',
@@ -7,5 +6,6 @@ import { Component } from '@angular/core';
   imports: [],
   templateUrl: './card.component.html',
   styleUrl: './card.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class CardComponent {}

@@ -82,5 +82,9 @@
   }
 
   // Typography
+
+  //   font-family: monospace;
+  font-family: 'PT Sans', sans-serif; // put initial font in main styles to avoid FOUC
+
   --nx-custom-text-size-1: 1rem;
 }

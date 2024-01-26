@@ -1,31 +1,15 @@
 :host {
-  //   font-family: monospace;
-  font-family: 'PT Sans', sans-serif;
+
+  nx-playground-card {
+    margin-bottom: 16px !important;
+  }
 
   & .Card {
-    background-color: #{var(--nx-custom-purple-050)};
-    border: 1px solid #{var(--nx-custom-purple-500)};
-    border-radius: 8px;
-    // padding-inline-start: 16px;
-    padding: 16px 16px 24px;
-
     &__Title {
       font-size: 24px;
       font-weight: 600;
       color: #{var(--nx-global-color-primary)};
       margin-bottom: 16px;
-    }
-  }
-
-  & .mt {
-    &-1 {
-      margin-top: 4px;
-    }
-  }
-
-  & .mb {
-    &-1 {
-      margin-bottom: 4px;
     }
   }
 }
