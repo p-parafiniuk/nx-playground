@@ -22,7 +22,7 @@ export const appConfig: ApplicationConfig = {
       appRoutes,
       withComponentInputBinding() // to take advantage of RouterInput decorator to listen to route changes through input binding
     ),
-    provideServiceWorker('ngsw-worker.js', {
+    provideServiceWorker('ngsw-worker.js', { // PWA setup
       enabled: !isDevMode(),
       registrationStrategy: 'registerWhenStable:30000',
     }),

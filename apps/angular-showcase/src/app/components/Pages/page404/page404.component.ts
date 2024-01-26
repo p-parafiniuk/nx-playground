@@ -1,6 +1,9 @@
-import { Component } from '@angular/core';
+import { Component, Input as RouterInput } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ActivatedRoute, RouterModule } from '@angular/router';
+import {
+  ActivatedRoute,
+  RouterModule,
+} from '@angular/router';
 
 @Component({
   selector: 'nx-playground-page404',
@@ -13,4 +16,7 @@ export class Page404Component {
   constructor(public activatedRoute: ActivatedRoute) {
     console.log('Page404Component', activatedRoute);
   }
+
+  @RouterInput() testId!: string;
+  // test case: http://localhost:4200/internal-test/234s?testId=%27test_ok%27
 }
