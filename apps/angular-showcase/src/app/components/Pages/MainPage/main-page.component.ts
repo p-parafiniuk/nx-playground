@@ -32,16 +32,16 @@ import { CommonModule } from '@angular/common';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 import { ProductService } from '../../../services/Product/product.service';
+import { CardComponent } from '@nx-playground/ui';
 
 @Component({
   selector: 'nx-playground-main-page',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, CardComponent],
   templateUrl: './main-page.component.html',
   styleUrl: './main-page.component.scss',
 })
 export class MainPageComponent implements OnInit {
-  @Input() title: string;
 
   waterProducts = [{ name: 'water' }, { name: 'water2' }, { name: 'water3' }];
   // count$: Observable<number>;
@@ -51,7 +51,6 @@ export class MainPageComponent implements OnInit {
     private productService: ProductService,
     private store: Store<{ count: number }>
   ) {
-    this.title = 'title';
 
     // this.count$ = store.select('count');
   }

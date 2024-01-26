@@ -5,16 +5,14 @@
 <button (click)="addProduct()">Add</button>
 
 @for (item of waterProducts; track item.name) {
-<div class="Card mb-1">
-  <div class="Card__Title">
-    {{ item.name }}
-  </div>
+<nx-playground-card class="mb-1">
+  <div class="Card__Title">{{ item.name }}</div>
   <div class="Card__Text">
     Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laboriosam quas
     quis at quidem natus! Eius quaerat error laborum non ad dolores quae
     corporis veniam, aut, ea fuga porro deleniti quam?
   </div>
-</div>
+</nx-playground-card>
 } @empty {
 <li>There are no items.</li>
 }
