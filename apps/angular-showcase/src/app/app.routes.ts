@@ -23,7 +23,20 @@ export const appRoutes: Route[] = [
  *   extract information from nodes.
  */
 
+// Most Used & interesting to dig deeper
+/**
+  route: ActivatedRouteSnapshot, 
+  state: RouterStateSnapshot
+
+  UrlSerializer
+  EventType
+  GuardsCheckEnd
+  NavigationStart/End
+  NavigationError
+ */
+
 //Example
+
 /**
 export const appRoutes: Route[] = [
   {
