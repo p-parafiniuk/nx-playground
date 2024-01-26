@@ -1,1 +1,12 @@
-<p>button works!</p>
+<button
+  type="button"
+  role="button"
+  class="Button"
+  [attr.aria-label]="ariaLabel"
+>
+  @if (loading) {
+  <ng-content></ng-content> ... } 
+  @else {
+  <ng-content></ng-content>
+  }
+</button>

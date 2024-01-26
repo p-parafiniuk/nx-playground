@@ -32,12 +32,12 @@ import { CommonModule } from '@angular/common';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 import { ProductService } from '../../../services/Product/product.service';
-import { CardComponent } from '@nx-playground/ui';
+import { ButtonComponent, CardComponent } from '@nx-playground/ui';
 
 @Component({
   selector: 'nx-playground-main-page',
   standalone: true,
-  imports: [CommonModule, CardComponent],
+  imports: [CommonModule, CardComponent, ButtonComponent],
   templateUrl: './main-page.component.html',
   styleUrl: './main-page.component.scss',
 })

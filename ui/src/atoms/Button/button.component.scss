@@ -1,0 +1,15 @@
+:host {
+  & .Button {
+    background-color: #{var(--nx-custom-purple-500)};
+    border: 1px solid #{var(--nx-custom-purple-300)};
+    border-radius: 4px;
+    padding: 8px 12px;
+    color: #{var(--nx-custom-yellow-vivid-050)};
+    box-shadow: 0 1px 3px hsla(0, 0%, 0%, 0.3);
+
+    &:hover {
+      cursor: pointer;
+      background-color: #{var(--nx-custom-purple-600)};
+    }
+  }
+}
