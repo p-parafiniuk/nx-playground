@@ -19,7 +19,7 @@ export const counterReducer = createReducer(
       ...state,
       products: [...state, action],
     };
-  }),
+  })
   // on(editProduct, (state, action) => state + 1),
   // on(removeProduct, (state, action) => state + 1)
 );
@@ -30,7 +30,7 @@ export const counterReducer = createReducer(
 import { Component, Input, OnInit, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Store } from '@ngrx/store';
-import { Observable } from 'rxjs';
+import { Observable, tap, retry, catchError } from 'rxjs';
 import { ProductService } from '../../../services/Product/product.service';
 import { ButtonComponent, CardComponent } from '@nx-playground/ui';
 
@@ -42,7 +42,6 @@ import { ButtonComponent, CardComponent } from '@nx-playground/ui';
   styleUrl: './main-page.component.scss',
 })
 export class MainPageComponent implements OnInit {
-
   waterProducts = [{ name: 'water' }, { name: 'water2' }, { name: 'water3' }];
   // count$: Observable<number>;
   // signalCount = signal(0);
@@ -51,7 +50,6 @@ export class MainPageComponent implements OnInit {
     private productService: ProductService,
     private store: Store<{ count: number }>
   ) {
-
     // this.count$ = store.select('count');
   }
 
@@ -63,10 +61,30 @@ export class MainPageComponent implements OnInit {
     // })
   }
 
+  observable$ = tap((products) => {
+    console.log('products', products);
+  });
+
   fetchProducts() {
-    this.productService.getProducts().subscribe((products) => {
-      console.log('products', products);
-    });
+    // this.productService.getProducts().pipe(this.observable$);
+    this.productService
+      .getProducts()
+      .pipe(
+        tap(() => {
+          // clear error
+        }),
+        tap((products) => {
+          console.log('products:pipe', products);
+        }),
+        retry(3),
+        catchError((error) => {
+          console.warn('error', error);
+          return error;
+        })
+      )
+      .subscribe((products) => {
+        console.log('products::sub', products);
+      });
   }
 
   // signalIncrement() {
