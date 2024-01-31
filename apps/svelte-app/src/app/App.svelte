@@ -1,26 +1,19 @@
-<!-- <script lang="ts">
-    let count: number = 0;
-    const increment = () => {
-      count += 1;
-    };
-  </script>
-  
-  <button on:click={increment}>
-    count is {count}
-  </button> -->
-
 <script lang="ts">
-//   import { Counter } from '@svelte/shared';
+  //   import { Counter } from '@svelte/shared';
   export let name: string;
+
+  let count: number = 0;
+  const increment = () => {
+    count += 1;
+  };
 </script>
 
 <main>
   <h1>Welcome {name}!</h1>
-  <p>
-    Visit <a href="https://nx.dev">Nx</a> or
-    <a href="https://svelte.dev/tutorial">Svelte tutorial</a> to learn how to build
-    Svelte apps.
-  </p>
+
+  <button on:click={increment}>
+    count is {count}
+  </button>
 
   <!-- <Counter /> -->
 </main>
