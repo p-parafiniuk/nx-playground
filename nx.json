@@ -35,6 +35,15 @@
     },
     "server": {
       "cache": true
+    },
+    "@nx/vite:test": {
+      "cache": true,
+      "inputs": ["default", "^production"]
+    },
+    "@nx/vite:build": {
+      "cache": true,
+      "dependsOn": ["^build"],
+      "inputs": ["production", "^production"]
     }
   },
   "namedInputs": {
@@ -47,7 +56,10 @@
       "!{projectRoot}/src/test-setup.[jt]s",
       "!{projectRoot}/test-setup.[jt]s",
       "!{projectRoot}/.eslintrc.json",
-      "!{projectRoot}/eslint.config.js"
+      "!{projectRoot}/eslint.config.js",
+      "!{projectRoot}/cypress/**/*",
+      "!{projectRoot}/**/*.cy.[jt]s?(x)",
+      "!{projectRoot}/cypress.config.[jt]s"
     ],
     "sharedGlobals": []
   },
@@ -64,6 +76,12 @@
     },
     "@nx/angular:component": {
       "style": "scss"
+    },
+    "@nx/web:application": {
+      "style": "scss",
+      "linter": "eslint",
+      "unitTestRunner": "vitest",
+      "e2eTestRunner": "cypress"
     }
   },
   "nxCloudAccessToken": "YTY3NjAzZDMtYzFlOS00YTYxLWFiMzEtNjI2ZDJmNzk1YmMzfHJlYWQtd3JpdGU="
